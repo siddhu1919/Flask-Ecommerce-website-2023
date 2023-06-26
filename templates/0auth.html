@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Sign in/up </title>
+  <!-- Favicon  -->
+  <link rel="shortcut icon"  href="../static/pheonix-favicon-16.png"   type="image/x-icon">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'><link rel="stylesheet" href="/static/css/0auth.css">
+  
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h2 style="font-weight: bold; color: blueviolet ;" > SHOP-SKY </h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="/register" method="post">
+
+			<h1 class="mt-5">Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input type="text" placeholder="Username" name="username"/>
+			<input type="email" placeholder="Email" name="email"/>
+			<input type="password" placeholder="Password" name="password"/>
+			<button id="signup" type="submit">Sign Up</button>
+			{% if message is defined and message %}
+			<div class="alert alert-warning ">{{ message }}</div>
+			{% endif %}
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="/Login" method="post" >
+			{% if err is defined and err %}
+   		<div class="alert alert-warning">{{ err }}</div>
+  			{% endif %}
+			<h1>Sign in</h1>
+			<div class="social-container">
+				<a href="#" class="social"><iv6 class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input type="email" placeholder="Email" name="email"/>
+			<input type="password" placeholder="Password" name="password"/>
+			<a href="#">Forgot your password?</a>
+			<button type="submit">Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- partial -->
+  <script  src="/static/js/0auth.js"></script>
+
+</body>
+</html>

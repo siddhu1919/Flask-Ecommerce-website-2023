@@ -1,0 +1,1 @@
+print(len("$2b$10$H1zy59uFdX15QuGGzMtCdendZaMKjD2K0L/3fhkLXwA"))
